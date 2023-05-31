@@ -25,7 +25,7 @@ public class Lab1Main {
 
 				if(("1").equals(input)) {															
 					if(directory.isEmpty()) {
-						System.out.println(" The root directory is empty, try other options");
+						System.out.println(" The root directory is empty, try More options");
 					} else {
 						System.out.println("\n Existing files seperated with comma[,] \n");
 
@@ -35,7 +35,6 @@ public class Lab1Main {
 					}	
 					
 				} else if(("2").equals(input)) {
-					System.out.println("\n More Options \n");
 					showMoreOptions();										
 				} else if(("3").equals(input)) {
 					System.out.println("\n Exiting application \n");
@@ -104,7 +103,7 @@ public class Lab1Main {
 				
 				if(fileName instanceof String) {					
 					if(directory.contains(fileName)) {
-						System.out.println("\n File with name: " + fileName + " was found successfully \n");
+						System.out.println("\n File with name: \"" + fileName + "\" was found successfully \n");
 					} else {
 						System.out.println("\n File not found, try again \n");
 					}
