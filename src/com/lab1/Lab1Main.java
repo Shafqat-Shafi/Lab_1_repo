@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class Lab1Main {
 
 	static List<String> directory = new ArrayList<String>();
-	static Scanner intInput = new Scanner(System.in);
 	static Scanner strInput = new Scanner(System.in);
 
 	public static void main(String args[]) {
@@ -22,9 +21,9 @@ public class Lab1Main {
 				System.out.println(" 2. More options");
 				System.out.println(" 3. exit \n");
 								
-				int input = intInput.nextInt();
+				String input = strInput.nextLine();
 
-				if(input == 1) {															
+				if(("1").equals(input)) {															
 					if(directory.isEmpty()) {
 						System.out.println(" The root directory is empty, try other options");
 					} else {
@@ -32,27 +31,24 @@ public class Lab1Main {
 
 						Collections.sort(directory);
 						
-						System.out.println(directory);
+						System.out.println(" " + directory);
 					}	
 					
-				} else if(input == 2) {
+				} else if(("2").equals(input)) {
 					System.out.println("\n More Options \n");
 					showMoreOptions();										
-				} else if(input ==3) {
+				} else if(("3").equals(input)) {
 					System.out.println("\n Exiting application \n");
 					break;
 				} else {
 					System.out.println("\n Wrong Input. Please try again \n");
-					main(new String[1]);
 				}
 				
 			}
 					
 		} catch (Exception e) {
-			System.out.println("\n Wrong Input. Please try again \n");
-			main(new String[1]);
+			System.out.println("\n Exception occured. Please run the application again \n");
 		} finally {
-			intInput.close();
 			strInput.close();
 		}
 		
@@ -66,9 +62,9 @@ public class Lab1Main {
 			System.out.println(" 2. Search for a file");
 			System.out.println(" 4. Go back <- \n");
 							
-			int input = intInput.nextInt();
+			String input = strInput.nextLine();
 
-			if(input == 1) {				
+			if(("1").equals(input)) {				
 				while(true) {
 					System.out.println("\n Enter file name \n");
 
@@ -85,7 +81,7 @@ public class Lab1Main {
 				}
 				showMoreOptions();
 				
-			} else if(input == 2) {
+			} else if(("2").equals(input)) {
 				System.out.println("\n Enter file name you want to delete \n");
 				
 				String fileName = strInput.nextLine();
@@ -101,7 +97,7 @@ public class Lab1Main {
 				}
 				showMoreOptions();
 				
-			} else if(input ==3) {
+			} else if(("3").equals(input)) {
 				System.out.println("\n Enter a file name \n");
 				
 				String fileName = strInput.nextLine();
@@ -117,7 +113,7 @@ public class Lab1Main {
 				}
 				showMoreOptions();
 				
-			} else if(input == 4) {
+			} else if(("4").equals(input)) {
 				main(new String[1]);
 			} else {
 				System.out.println("\n Wrong Input. Please try again \n");
@@ -128,7 +124,6 @@ public class Lab1Main {
 			System.out.println("\n Wrong Input. Please try again \n");
 			showMoreOptions();
 		} finally {
-			intInput.close();
 			strInput.close();
 		}		
 
